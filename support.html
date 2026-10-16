@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Sleuth &mdash; Support</title>
+    <style>
+        :root {
+            --blue: #007AFF;
+            --bg: #f9fafb;
+            --card: #ffffff;
+            --text: #1d1d1f;
+            --secondary: #6e6e73;
+            --border: #e5e7eb;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--blue);
+            text-decoration: none;
+            font-size: 15px;
+            margin-bottom: 24px;
+        }
+        .back:hover { text-decoration: underline; }
+        h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+        .lede {
+            color: var(--secondary);
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+        .card h2 { font-size: 20px; font-weight: 600; margin-bottom: 12px; }
+        .card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 16px;
+            margin-bottom: 6px;
+        }
+        .card h3:first-of-type { margin-top: 0; }
+        .card p {
+            color: var(--secondary);
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+        .card p:last-child { margin-bottom: 0; }
+        .card ul {
+            color: var(--secondary);
+            font-size: 15px;
+            padding-left: 22px;
+            margin-bottom: 12px;
+        }
+        .card li { margin-bottom: 6px; }
+        .card a { color: var(--blue); }
+        .card a.button {
+            display: inline-block;
+            background: var(--blue);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            margin-top: 8px;
+        }
+        .card a.button:hover { opacity: 0.85; }
+        footer {
+            text-align: center;
+            margin-top: 48px;
+            color: var(--secondary);
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back">&larr; Back to Calendar Sleuth</a>
+        <h1>Support</h1>
+        <p class="lede">Getting started, common questions, and how to get in touch.</p>
+
+        <div class="card">
+            <h2>Requirements</h2>
+            <ul>
+                <li>iPhone or iPad running iOS 26 or later, or a Mac running macOS 26 or later</li>
+                <li>A Tradier API token for market data (a free sandbox token gives delayed data; a production token comes with a Tradier brokerage account)</li>
+                <li>Optional: a free Alpha Vantage API key, for earnings dates</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Getting Started</h2>
+            <h3>1. Add your Tradier token</h3>
+            <p>Open <strong>Settings &rarr; Tradier</strong>, choose the Account type that matches your token (<strong>Sandbox</strong> or <strong>Production</strong>), and paste the token. It&rsquo;s stored only in your device&rsquo;s Keychain.</p>
+            <h3>2. Enter a symbol</h3>
+            <p>Type a symbol in the field at the top of the list and press Return. Calendar Sleuth fills in a spread to start from: a call, the first expiration 60 or more days out for the long, the Friday of the first week 5 or more days out for the short, and the strike nearest the stock listed for both.</p>
+            <h3>3. Adjust the spread</h3>
+            <p>Every choice is a picker: Call or Put, either expiration, or the strike. The delta button beside the strike (&ldquo;20&Delta;&rdquo;) picks the strike nearest your target delta on the short&rsquo;s chain. Each change is checked again right away.</p>
+            <h3>4. Read the results</h3>
+            <p><strong>This Window</strong> shows the net per contract to the short&rsquo;s expiration; <strong>Outlook</strong> the price band, the projected break-even and the best net return; <strong>Week by Week</strong> every later window to the long&rsquo;s expiration.</p>
+            <h3>5. Not ready for a token yet?</h3>
+            <p>Tap <strong>Try with Sample Data</strong> in the list (or in Settings &rarr; Tradier) to explore six symbols with made-up quotes, option chains and earnings dates.</p>
+        </div>
+
+        <div class="card">
+            <h2>FAQ</h2>
+
+            <h3>It says &ldquo;Add your Tradier API token&rdquo;, or Tradier rejected the token</h3>
+            <p>Check that the Account setting matches the token: sandbox tokens only work with Sandbox, and production tokens only with Production. Use the eye button in Settings to check the saved token for typos.</p>
+
+            <h3>&ldquo;Tradier has no quote&rdquo; for a symbol</h3>
+            <p>Check the spelling. Calendar Sleuth covers what Tradier carries: US stocks and funds with listed options. Share classes need their class letter, for example BRK.B.</p>
+
+            <h3>&ldquo;Has no listed options 5 and 60 days out&rdquo;</h3>
+            <p>The symbol needs an expiration at least 5 days away for the short and one at least 60 days away for the long.</p>
+
+            <h3>&ldquo;No option is listed at the strike&rdquo;</h3>
+            <p>That strike isn&rsquo;t listed for one of the two expirations. Pick another strike; the picker lists only strikes listed for both.</p>
+
+            <h3>What does &ldquo;net per contract&rdquo; mean?</h3>
+            <p>The short&rsquo;s premium (its mid, counting only its extrinsic value) less the long&rsquo;s decay over the same window and the commission, for one contract of 100 shares, at the short&rsquo;s expiration if the stock is still at the last price. Above zero, the short&rsquo;s premium covers the long&rsquo;s decay.</p>
+
+            <h3>What is the price band?</h3>
+            <p>The range of stock prices over which this window&rsquo;s short still covers the long&rsquo;s decay. It&rsquo;s centered on the strike, not on the stock, and each later week&rsquo;s band is narrower. It isn&rsquo;t a forecast or a probability.</p>
+
+            <h3>Some weeks say &ldquo;not listed yet&rdquo;</h3>
+            <p>Weekly options are usually listed only about six weeks ahead. For a symbol with weeklies, Calendar Sleuth fills in the later Fridays and prices them at the implied volatility the listed options point to.</p>
+
+            <h3>The figures look off, or jump between checks</h3>
+            <p>Option quotes are only fresh during market hours, and a wide bid/ask moves the mid every figure starts from. Tap <strong>Refresh</strong>, and check the bid and ask under the Long and Short rows.</p>
+
+            <h3>No earnings dates</h3>
+            <p>Add a free Alpha Vantage key in <strong>Settings &rarr; Earnings Dates</strong>. If the free tier&rsquo;s daily lookups are used up, Outlook says so; dates come back the next day.</p>
+
+            <h3>What&rsquo;s kept if I delete the app?</h3>
+            <p>On an <strong>iPhone or iPad</strong>, deleting the app erases your recent and followed spreads and your settings on that device. Your <strong>Tradier token and Alpha Vantage key are kept</strong> in the Keychain and usually come back after reinstalling; tap <strong>Remove</strong> in Settings first if you don&rsquo;t want that. On the <strong>Mac</strong>, deleting the app keeps everything.</p>
+
+            <h3>Does the app place trades?</h3>
+            <p>No. Calendar Sleuth only reads market data. It never places orders, reads account balances or positions, or moves money.</p>
+        </div>
+
+        <div class="card">
+            <h2>Contact &amp; Bug Reports</h2>
+            <p>The fastest way to report a bug, request a feature, or ask a question is to open a GitHub issue.</p>
+            <a href="https://github.com/ayefon/CalendarSleuth/issues" class="button">Open a GitHub Issue</a>
+        </div>
+
+        <footer>
+            <p>Calendar Sleuth is an analysis tool, not investment advice.</p>
+            <p style="margin-top: 8px;">&copy; 2026 Don Babcock. All rights reserved.</p>
+            <p style="margin-top: 8px;">
+                <a href="index.html" style="color: var(--blue); text-decoration: none;">Home</a> &middot;
+                <a href="privacy.html" style="color: var(--blue); text-decoration: none;">Privacy</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
