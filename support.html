@@ -108,7 +108,7 @@
             <h3>1. Add your Tradier token</h3>
             <p>Open <strong>Settings &rarr; Tradier</strong>, choose the Account type that matches your token (<strong>Sandbox</strong> or <strong>Production</strong>), and paste the token. It&rsquo;s stored only in your device&rsquo;s Keychain.</p>
             <h3>2. Enter a symbol</h3>
-            <p>Type a symbol in the field at the top of the list and press Return. Calendar Sleuth fills in a spread to start from: a call, the first expiration 60 or more days out for the long, the Friday of the first week 5 or more days out for the short, and the strike nearest the stock listed for both.</p>
+            <p>Type a symbol in the field at the top of the list and press Return. Calendar Sleuth fills in a spread to start from: a call, the first expiration 60 or more days out for the long, the Friday of the first week 5 or more days out for the short, and the strike nearest the stock listed for both. To add several at once, separate them with commas or spaces (AAPL, MSFT NVDA): each one is added to Recent in the order typed, and any that can&rsquo;t be checked are listed at the top of the spread pane.</p>
             <h3>3. Adjust the spread</h3>
             <p>Every choice is a picker: Call or Put, either expiration, or the strike. The delta button beside the strike (&ldquo;20&Delta;&rdquo;) picks the strike nearest your target delta on the short&rsquo;s chain. Each change is checked again right away.</p>
             <h3>4. Read the results</h3>
@@ -149,6 +149,9 @@
 
             <h3>No earnings dates</h3>
             <p>Add a free Alpha Vantage key in <strong>Settings &rarr; Earnings Dates</strong>. If the free tier&rsquo;s daily lookups are used up, Outlook says so; dates come back the next day.</p>
+
+            <h3>No ex-dividend dates</h3>
+            <p>Tradier gives dividend data only to Tradier Brokerage accounts, so ex-dividend dates need a <strong>production</strong> token (Settings &rarr; Tradier &rarr; Account: Production). Declared dates are the ones a company has announced; dates marked &ldquo;~&rdquo; and &ldquo;expected&rdquo; follow its usual spacing, since companies usually declare only a few weeks ahead.</p>
 
             <h3>What&rsquo;s kept if I delete the app?</h3>
             <p>On an <strong>iPhone or iPad</strong>, deleting the app erases your recent and followed spreads and your settings on that device. Your <strong>Tradier token and Alpha Vantage key are kept</strong> in the Keychain and usually come back after reinstalling; tap <strong>Remove</strong> in Settings first if you don&rsquo;t want that. On the <strong>Mac</strong>, deleting the app keeps everything.</p>
