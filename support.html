@@ -108,7 +108,7 @@
             <h3>1. Add your Tradier token</h3>
             <p>Open <strong>Settings &rarr; Tradier</strong>, choose the Account type that matches your token (<strong>Sandbox</strong> or <strong>Production</strong>), and paste the token. It&rsquo;s stored only in your device&rsquo;s Keychain.</p>
             <h3>2. Enter a symbol</h3>
-            <p>Type a symbol in the field at the top of the list and press Return. Calendar Sleuth fills in a spread to start from: a call, the first expiration 60 or more days out for the long, the Friday of the first week 5 or more days out for the short, and the strike nearest the stock listed for both. To add several at once, separate them with commas or spaces (AAPL, MSFT NVDA): each one is added to Recent in the order typed, and any that can&rsquo;t be checked are listed at the top of the spread pane.</p>
+            <p>Type a symbol in the field at the top of the list and press Return. Calendar Sleuth fills in a spread to start from: a call, the first expiration at least 64 days out for the long, the Friday of the first week with one at least 4 days out for the short (both minimums can be changed in Settings &rarr; Spread Checks, for monthly shorts, say), and the strike nearest the stock listed for both. To add several at once, separate them with commas or spaces (AAPL, MSFT NVDA): each one is added to Recent in the order typed, and any that can&rsquo;t be checked are listed at the top of the spread pane.</p>
             <h3>3. Adjust the spread</h3>
             <p>Every choice is a picker: Call or Put, either expiration, or the strike. The delta button beside the strike (&ldquo;20&Delta;&rdquo;) picks the strike nearest your target delta on the short&rsquo;s chain. Each change is checked again right away.</p>
             <h3>4. Read the results</h3>
@@ -126,8 +126,8 @@
             <h3>&ldquo;Tradier has no quote&rdquo; for a symbol</h3>
             <p>Check the spelling. Calendar Sleuth covers what Tradier carries: US stocks and funds with listed options. Share classes need their class letter, for example BRK.B.</p>
 
-            <h3>&ldquo;Has no listed options 5 and 60 days out&rdquo;</h3>
-            <p>The symbol needs an expiration at least 5 days away for the short and one at least 60 days away for the long.</p>
+            <h3>&ldquo;Has no listed options far enough out&rdquo;</h3>
+            <p>The symbol needs an expiration at least the short&rsquo;s minimum days away and one at least the long&rsquo;s minimum away: 4 and 64 unless changed in <strong>Settings &rarr; Spread Checks</strong>.</p>
 
             <h3>&ldquo;No option is listed at the strike&rdquo;</h3>
             <p>That strike isn&rsquo;t listed for one of the two expirations. Pick another strike; the picker lists only strikes listed for both.</p>
@@ -140,6 +140,9 @@
 
             <h3>What are the shaded and outlined bands on the chart?</h3>
             <p>The stock&rsquo;s <strong>supply and demand zones</strong>: places where price paused for one to six candles before leaving sharply. Demand zones (price rallied away) use the up-candle color; supply zones (price dropped away) the down-candle color. <strong>Dashed outlines</strong> labeled W are the weekly chart&rsquo;s zones. Yellow circles mark where price came back to a zone, and fainter zones are <strong>weak</strong>: price didn&rsquo;t leave them cleanly. The switch above the chart turns them off for the symbol you&rsquo;re viewing, and <strong>Settings &rarr; Chart</strong> sets how each symbol starts. They show where price reacted before, not where it will, and don&rsquo;t change any figure.</p>
+
+            <h3>How do I see older candles or zones off the chart?</h3>
+            <p>The <strong>strip</strong> under the chart shows the whole stretch searched for zones (the <strong>Zone Search</strong> setting in <strong>Settings &rarr; Chart</strong>: 6 months, 1 year or 2 years), with the part on screen highlighted. Drag the highlight to move, drag either edge to show more or fewer candles, and double-tap it (double-click on the Mac) to go back to the latest. Drag the prices beside the chart to move up or down. <strong>Nearest supply</strong> and <strong>Nearest demand</strong> under the chart name the closest zones above and below the last price, whether they&rsquo;re on screen or not.</p>
 
             <h3>Some weeks say &ldquo;not listed yet&rdquo;</h3>
             <p>Weekly options are usually listed only about six weeks ahead. For a symbol with weeklies, Calendar Sleuth fills in the later Fridays and prices them at the implied volatility the listed options point to.</p>
