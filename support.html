@@ -136,13 +136,16 @@
             <p>The short&rsquo;s premium (its mid, counting only its extrinsic value) less the long&rsquo;s decay over the same window and the commission, for one contract of 100 shares, at the short&rsquo;s expiration if the stock is still at the last price. Above zero, the short&rsquo;s premium covers the long&rsquo;s decay.</p>
 
             <h3>What is the price band?</h3>
-            <p>The range of stock prices over which this window&rsquo;s short still covers the long&rsquo;s decay. It&rsquo;s centered on the strike, not on the stock, and each later week&rsquo;s band is narrower. It isn&rsquo;t a forecast or a probability.</p>
+            <p>The range of stock prices over which this window&rsquo;s short still covers the long&rsquo;s decay. It&rsquo;s centered on the strike, not on the stock, and each later week&rsquo;s band is narrower. It isn&rsquo;t a forecast or a probability. Outlook charts it, with a gray bell behind it of where the stock may end the window (from the short&rsquo;s implied volatility) for comparing strikes; since the band is a starting price and the bell an ending one, the bell&rsquo;s share inside the band isn&rsquo;t the chance of ending ahead.</p>
 
             <h3>What are the shaded and outlined bands on the chart?</h3>
             <p>The stock&rsquo;s <strong>supply and demand zones</strong>: places where price paused for one to six candles before leaving sharply. Demand zones (price rallied away) use the up-candle color; supply zones (price dropped away) the down-candle color. <strong>Dashed outlines</strong> labeled W are the weekly chart&rsquo;s zones. Yellow circles mark where price came back to a zone, and fainter zones are <strong>weak</strong>: price didn&rsquo;t leave them cleanly. The switch above the chart turns them off for the symbol you&rsquo;re viewing, and <strong>Settings &rarr; Chart</strong> sets how each symbol starts. They show where price reacted before, not where it will, and don&rsquo;t change any figure.</p>
 
             <h3>What&rsquo;s the pane of bars under the chart?</h3>
             <p>Each candle&rsquo;s <strong>volume</strong>, in its candle&rsquo;s color. A candle still in progress when the prices were fetched (today&rsquo;s, during the session) is hatched and read &ldquo;so far&rdquo;. The <strong>Volume</strong> switch beside Weak Zones, or <strong>Settings &rarr; Chart &rarr; Show Volume</strong>, hides or shows it for every symbol.</p>
+
+            <h3>The IV gauge says &ldquo;No reading&rdquo;</h3>
+            <p>The reason follows it. The gauge needs options listed around 30 days out, and at least 282 days of prices (about 14 months), so recently listed stocks have none yet.</p>
 
             <h3>How do I see older candles or zones off the chart?</h3>
             <p>The <strong>strip</strong> under the chart shows the whole stretch searched for zones (the <strong>Zone Search</strong> setting in <strong>Settings &rarr; Chart</strong>: 6 months, 1 year or 2 years), with the part on screen highlighted. Drag the highlight to move, drag either edge to show more or fewer candles, and double-tap it (double-click on the Mac) to go back to the latest. Drag the prices beside the chart to move up or down. <strong>Nearest supply</strong> and <strong>Nearest demand</strong> under the chart name the closest zones above and below the last price, whether they&rsquo;re on screen or not.</p>
@@ -158,6 +161,16 @@
 
             <h3>No ex-dividend dates</h3>
             <p>Tradier gives dividend data only to Tradier Brokerage accounts, so ex-dividend dates need a <strong>production</strong> token (Settings &rarr; Tradier &rarr; Account: Production). Declared dates are the ones a company has announced; dates marked &ldquo;~&rdquo; and &ldquo;expected&rdquo; follow its usual spacing, since companies usually declare only a few weeks ahead.</p>
+
+            <h3>What is &ldquo;Chance this window ends ahead&rdquo;?</h3>
+            <p>Outlook lets the stock end the window anywhere: it gives the share of likely ending prices (the options market&rsquo;s implied view, from the short&rsquo;s IV) at which this window nets above zero, and the two break-even prices. Tap it for the chart. It isn&rsquo;t a forecast, and a one-week window&rsquo;s chance is often near 50&ndash;60%, since its profitable peak is narrow.</p>
+
+            <h3>What does &ldquo;Next roll: Watch&rdquo; mean?</h3>
+            <p>For a spread you follow, the app judges the window after the open short, as Week by Week prices it. <strong>No longer covers</strong>: that window&rsquo;s net is at or below your threshold (Settings &rarr; Spread Checks, $0 unless changed) or the stock is outside its band. <strong>Watch</strong>: it still covers, but the stock is within half a typical week&rsquo;s move of a band edge, the net is thin, or an earnings or ex-dividend date falls in it. <strong>Covers</strong>: none of those. It holds the stock and IVs still, and reports what the rules find; the decision is yours.</p>
+            <h3>What are alert prices?</h3>
+            <p>With an open short in a followed spread&rsquo;s log, the app shows the two stock prices where that short&rsquo;s window ends even if the stock is there at its expiration, from the premium logged and the long&rsquo;s change in value since. Outlook&rsquo;s band chart draws them. They&rsquo;re nearer the stock than the band&rsquo;s edges, and they&rsquo;re meant to be copied into price alerts of your own as an early warning; the app itself doesn&rsquo;t alert. Earlier in the week the short still has time value, so a price past one isn&rsquo;t yet a loss.</p>
+            <h3>What&rsquo;s the difference between &ldquo;Watch&rdquo; and alert prices?</h3>
+            <p><strong>Watch</strong> is the next roll&rsquo;s orange verdict, also flagged in the list: next week&rsquo;s window still covers the long&rsquo;s decay, but the stock is near its band edge, the net is thin, or an earnings or ex-dividend date falls in it. <strong>Alert prices</strong> are about this week: the two prices where the open short&rsquo;s window ends even. Help&rsquo;s <strong>Glossary</strong> defines every term the app uses, and the search field at the top of Help finds the topics that mention any word.</p>
 
             <h3>What&rsquo;s kept if I delete the app?</h3>
             <p>On an <strong>iPhone or iPad</strong>, deleting the app erases your recent and followed spreads and your settings on that device. Your <strong>Tradier token and Alpha Vantage key are kept</strong> in the Keychain and usually come back after reinstalling; tap <strong>Remove</strong> in Settings first if you don&rsquo;t want that. On the <strong>Mac</strong>, deleting the app keeps everything.</p>
